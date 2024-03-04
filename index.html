@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Forum</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="w-10/12 mx-auto mt-10">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <img src="images/logo.png" alt="">
+            </div>
+            <div class="navbar-end flex flex-col lg:flex-row">
+                <div class="navbar-end hidde lg:flex">
+                    <ul class=" menu-horizontal px-5 gap-4 flex ">
+                      <div class="tooltip" data-tip="Home">
+                          <button class=" border border-black p-2 rounded-full"><img class="w-6" src="images/home.png" alt=""></button>
+                      </div>
+                      <div class="tooltip " data-tip="Ask Anything">
+                          <button class="border border-black p-2 rounded-full"><img class="w-5" src="images/pen.png" alt=""></button>
+                      </div>
+                      <div class="tooltip " data-tip="Contact Us">
+                      <button class="border border-black p-2 rounded-full"><img class="w-5" src="images/add.jpg" alt=""></button>
+                      </div>
+                      <div class="tooltip" data-tip="About Us">
+                          <button class="border border-black p-2 rounded-full"><img class="w-6 " src="images/flag.png" alt=""></button>
+                      </div>
+                    </ul>
+                  </div>
+              <a class="btn bg-blue-400 text-xl text-white rounded-3xl">Sign in</a>
+            </div>
+          </div>
+    </header>
+    <main>
+        <!-- banner section -->
+        <section class="w-10/12 mx-auto">
+            <div class="hero lg:h-[500px] rounded-3xl " style="background-image: url(images/banner.webp);">
+                <div class=" text-neutral-content flex gap-16 flex-col lg:flex-row">
+                  <div class="max-w-md">
+                    <h1 class="mb-5 text-5xl font-bold">Welcome To The <span class="text-blue-500">Retro</span> Forum</h1>
+                    <p class="mb-5">Share your opnion and win and wap forum coffee mug. <br> Stay With us.</p>
+                    <label class="input input-bordered rounded-3xl flex items-center">
+                        <input id="search-field" type="text" class="grow p-2" placeholder="Search here anything" />
+                        <button onclick="handleSearch()" class="btn  bg-blue-400  text-white rounded-3xl">Search</button>
+                      </label>
+                  </div>
+                  <div class="flex gap-10 flex-1 bg-slate-100 text-black p-12 rounded-2xl">
+                    <div class="flex flex-col text-xl gap-4">
+                        <p>Registered Users</p>
+                        <p>Forum</p>
+                        <p>Topics</p>
+                        <p>Replies</p>
+                    </div>
+                    <div class="flex flex-col text-xl gap-4"">
+                        <p>01</p>
+                        <p>05</p>
+                        <p>01</p>
+                        <p>05</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <!-- all post section  -->
+
+        <section class="w-10/12 mx-auto mt-8">
+            <h2 class="text-center text-4xl font-bold">Let's Discuss</h2>
+            <p class="text-center text-xl "> Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+             <!-- spinner add  -->
+             <div id="loading" class="text-center mt-10 hidden">
+               <span class="loading loading-spinner text-info"></span>
+              </div>
+               <!-- all post container div  -->
+            <div class="flex gap-7 flex-col lg:flex-row">
+                <!-- post show div  -->
+
+                <div id="post-container">
+                
+                </div>
+                <!-- post count div  -->
+                <div class="rounded-3xl bg-base-200 p-6 mt-8 ">
+                    <div class=" flex justify-between gap-36">
+                      <p class="text-xl font-bold ">Title</p>
+                      <p>Mark As read <span id="count-card">(4)</span></p>
+                    </div>
+                    <div id="count-container">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- join our forum section  -->
+        <section class="w-10/12 mx-auto mt-10 ">
+          <div class="heo min-h-[400px] p-10 rounded-3xl bg-neutral-900">
+            <div class="hero-content flex flex-col-reverse lg:flex-row ">
+              <div class="max-w-xl">
+                <h1 class="text-5xl font-bold text-white">Join Our Forum</h1>
+                <p class="py-6 text-white"> you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined.</p>
+                <button class="btn btn-primary rounded-full text-xl">Register Now</button>
+              </div>
+              <div>
+                    <img src="images/joinforum.png" alt="">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- latest post section  -->
+        <section class="w-10/12 mx-auto mt-10">
+          <h2 class="text-center font-bold text-4xl">Latest Posts</h2>
+          <p class="text-center text-xl "> Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+
+   <!-- latest card container div  -->
+
+          <div id="latest-container" class="grid gap-4 grid-cols-1 lg:grid-cols-3">
+           
+          </div>
+        </section>
+      </main>
+      <footer class="footer footer-center mt-12 p-10 bg-base-200 text-black">
+        <aside>
+              <img src="images/logo.png" alt="">
+              <p class="mt-6 text- text-gray-600">
+                you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined. <br>Passionate travel enthusiast sharing captivating destinations and insider tips to inspire unforgettable journeys.
+              </p> 
+              <nav>
+                <div class="grid grid-flow-col mt-6 gap-10">
+                  <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+                  <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+                  <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+                </div>
+              </nav>
+          <p class="mt-8 text-gray-600 text-xl">2017 , All right reserved</p>
+        </aside> 
+      </footer>
+    <script src="js/retro.js"></script>
+</body>
+</html>
